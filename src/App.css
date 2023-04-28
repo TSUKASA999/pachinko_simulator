@@ -1,0 +1,698 @@
+* {
+  text-align: center;
+  background-color: #fff;
+}
+
+.header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #111 solid;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
+.headerConfig {
+  position: fixed;
+  right: -20rem;
+  width: 15rem;
+  height: 7rem;
+  padding: 10px;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.is-open.headerConfig {
+  right: 0;
+}
+
+.bold {
+  font-weight: bold;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.normal {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: grid;
+  place-items: center;
+}
+
+.toggle_input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.toggle_label {
+  width: 75px;
+  height: 35px;
+  background: #ccc;
+  position: relative;
+  display: inline-block;
+  border-radius: 40px;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+
+.toggle_label:after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+}
+
+.toggle_input:checked+.toggle_label {
+  background-color: #4BD865;
+}
+
+.toggle_input:checked+.toggle_label:after {
+  left: 40px;
+}
+
+.toggle_button {
+  position: relative;
+  width: 75px;
+  height: 35px;
+  margin: auto;
+  display: inline;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.logo {
+  margin-left: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.config {
+  margin: auto 3rem;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.config:hover {
+  background-color: #b1abab;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 1s, visibility 0s, ease 1s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.is-show.modal-wrapper {
+  transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalContents {
+  margin: 100px auto auto auto;
+  padding: 10px;
+  width: 35rem;
+  border-radius: 5px;
+}
+
+.specSelect {
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 100px 230px auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.specSelect div {
+  padding-right: auto;
+  padding-left: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.selectMiddle {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  margin-right: auto;
+  margin-left: auto;
+  width: 10rem;
+  height: 5rem;
+  border-radius: 50px;
+  background-color: red;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.selectMiddle:hover {
+  background-color: rgb(244, 149, 149);
+}
+
+.selectLightMiddle {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  margin-right: auto;
+  margin-left: auto;
+  width: 10rem;
+  height: 5rem;
+  border-radius: 50px;
+  background-color: green;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.selectLightMiddle:hover {
+  background-color: rgb(112, 243, 112);
+}
+
+.selectAma {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  margin-right: auto;
+  margin-left: auto;
+  width: 10rem;
+  height: 5rem;
+  border-radius: 50px;
+  background-color: blue;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.selectAma:hover {
+  background-color: rgb(147, 147, 247);
+}
+
+.aboutMiddle {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.aboutLightMiddle {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.aboutAma {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.startMiddle {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  background-color: red;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  height: 4rem;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.startLightMiddle {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  background-color: green;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  height: 4rem;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.startAma {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  background-color: blue;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  height: 4rem;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.none {
+  display: none;
+}
+
+
+
+.container {
+  margin: 50px auto auto auto;
+  display: grid;
+  grid-template-columns: 200px 250px 250px;
+  grid-template-rows: 180px 1fr 1fr 100px;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.container div {
+  border: 2px #111 solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.4);
+
+}
+
+.cash {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  display: grid;
+  padding: 10px;
+  gap: 10px;
+  background-color: #fff;
+  max-width: 200px;
+  min-width: 100px;
+}
+
+.cash img {
+  width: 100%;
+}
+
+.cash button {
+  background-color: #fff;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+}
+
+.cash button:hover {
+  background-color: #999;
+}
+
+.data {
+  grid-row: 1/2;
+  grid-column: 2/4;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  place-items: center;
+  background-color: #111;
+  max-width: 420px;
+  min-width: 350px;
+  /* border: 5px solid;
+  border-image: conic-gradient(#f5f551,#5eff5e,#84a1ff,#ff45ff,#ff5a5a,#ffbc41,#f5f551) 1; */
+
+}
+
+.bonusTimes {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  margin: 0;
+  color: red;
+  background-color: #111;
+}
+
+.bonusTimes span {
+  font-size: 80px;
+  background-color: #111;
+}
+
+.start {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  margin: 0;
+  color: lightgreen;
+  background-color: #111;
+}
+
+.start span {
+  font-size: 80px;
+  background-color: #111;
+}
+
+.totalStart {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  margin: 0;
+  color: lightgreen;
+  background-color: #111;
+}
+
+.totalStart span {
+  font-size: 30px;
+  background-color: #111;
+}
+
+.sideData {
+  grid-row: 2/4;
+  grid-column: 1/2;
+  display: grid;
+  padding: 10px;
+  gap: 10px;
+  max-width: 200px;
+  background-color: #fff;
+}
+
+
+
+.totalInvestments p:nth-child(1) {
+  background-color: blue;
+  color: #fff;
+  margin: 0;
+}
+
+.totalInvestments p:nth-child(2) {
+  margin: 0;
+  text-align: right;
+  padding-right: 10px;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+.investments p:nth-child(1) {
+  background-color: green;
+  color: #fff;
+  margin: 0;
+}
+
+.investments p:nth-child(2) {
+  margin: 0;
+  text-align: right;
+  padding-right: 10px;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+.mochidama p:nth-child(1) {
+  background-color: red;
+  color: #fff;
+  margin: 0;
+}
+
+.mochidama p:nth-child(2) {
+  margin: 0;
+  text-align: right;
+  padding-right: 10px;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+.display {
+  grid-row: 2/4;
+  grid-column: 2/4;
+  background-color: #ffffff;
+  color: brown;
+  font-size: 100px;
+  margin: 0;
+  height: auto;
+  display: grid;
+  place-items: center;
+  max-width: 420px;
+  padding: 10px;
+}
+
+.tamakashi {
+  grid-row: 4/5;
+  grid-column: 2/3;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #fff;
+  padding: 10px;
+  min-width: 250px;
+}
+
+.tamakashi .uwazara {
+  grid-row: 1/2;
+  grid-column: 1/3;
+  background-color: #fff;
+  margin: 0;
+  font-size: 15px;
+  width: 100px;
+}
+
+.tamakashi .credits {
+  grid-row: 2/3;
+  grid-column: 1/3;
+  margin: 0;
+  background-color: #fff;
+}
+
+.tamakashi .credits span {
+  font-size: 40px;
+  color: red;
+  background-color: #fff;
+}
+
+.tamakashi .tamakashiBtn {
+  grid-row: 1/3;
+  grid-column: 3/4;
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+  width: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.tamakashi .tamakashiBtn:hover {
+  background-color: rgb(242, 177, 177);
+}
+
+.tamakashi .finishBtn {
+  grid-row: 1/3;
+  grid-column: 4/5;
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+  width: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.tamakashi .finishBtn:hover {
+  background-color: rgb(184, 252, 184);
+}
+
+.handle {
+  grid-row: 4/5;
+  grid-column: 3/4;
+  border-radius: 50%;
+  /* background-image: url(./images/1000.jpg); */
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
+.handle:hover {
+  background-color: rgb(251, 223, 171);
+}
+
+.active.handle {
+  transform: rotate(45deg);
+}
+
+.result {
+  margin: auto;
+  width: 80%;
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultTotalInvestment {
+  font-size: 30px;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.resultMochidama {
+  font-size: 30px;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.results {
+  font-size: 30px;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.win {
+  font-size: 40px;
+  color: red;
+  font-weight: bold;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+.lose {
+  font-size: 40px;
+  color: blue;
+  font-weight: bold;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+.resultButton {
+  color: #fff;
+  font-size: 20px;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: rgb(0, 200, 255);
+  margin: 20px;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+}
+
+.resultButton:hover {
+  background-color: rgb(3, 157, 199);;
+}
+
+.openAnimation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #999;
+  animation: openAnimation;
+  animation-duration: 0.5s;
+  animation-delay: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes openAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -999;
+  }
+}
+
+.loader {
+  margin-top: 45vh;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #FFF;
+  background-color: #999;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
