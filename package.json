@@ -1,5 +1,5 @@
 {
-  "homepage": "http://TSUKASA999.github.io/pachinko_simulator/",
+  "homepage": "https://tsukasa999.github.io/pachinko_simulator/",
   "name": "pachinko_simulator",
   "version": "0.1.0",
   "private": true,
@@ -13,7 +13,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "postbuild": "cp build/index.html build/404.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
