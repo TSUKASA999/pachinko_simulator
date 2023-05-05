@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pachinko_simulator/static/css/main.4e88f880.css",
+    "main.css": "/pachinko_simulator/static/css/main.b5036ad4.css",
     "main.js": "/pachinko_simulator/static/js/main.10ad764f.js",
     "static/js/787.a8f90cf2.chunk.js": "/pachinko_simulator/static/js/787.a8f90cf2.chunk.js",
     "index.html": "/pachinko_simulator/index.html",
-    "main.4e88f880.css.map": "/pachinko_simulator/static/css/main.4e88f880.css.map",
+    "main.b5036ad4.css.map": "/pachinko_simulator/static/css/main.b5036ad4.css.map",
     "main.10ad764f.js.map": "/pachinko_simulator/static/js/main.10ad764f.js.map",
     "787.a8f90cf2.chunk.js.map": "/pachinko_simulator/static/js/787.a8f90cf2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e88f880.css",
+    "static/css/main.b5036ad4.css",
     "static/js/main.10ad764f.js"
   ]
 }
