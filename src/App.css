@@ -8,7 +8,9 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px #111 solid;
-  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  min-width: 520px;
 }
 
 .headerConfig {
@@ -152,13 +154,15 @@
 .modalContents {
   margin: 100px auto auto auto;
   padding: 10px;
-  width: 35rem;
+  width: 80vw;
+  min-width: 370px;
   border-radius: 5px;
 }
 
 .specSelect {
   padding: 10px;
   display: grid;
+  min-width: 300px;
   grid-template-rows: 100px 230px auto;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
@@ -178,7 +182,7 @@
   grid-column: 1/2;
   margin-right: auto;
   margin-left: auto;
-  width: 10rem;
+  width: 8rem;
   height: 5rem;
   border-radius: 50px;
   background-color: red;
@@ -198,7 +202,7 @@
   grid-column: 2/3;
   margin-right: auto;
   margin-left: auto;
-  width: 10rem;
+  width: 8rem;
   height: 5rem;
   border-radius: 50px;
   background-color: green;
@@ -218,7 +222,7 @@
   grid-column: 3/4;
   margin-right: auto;
   margin-left: auto;
-  width: 10rem;
+  width: 8rem;
   height: 5rem;
   border-radius: 50px;
   background-color: blue;
@@ -316,12 +320,12 @@
   display: none;
 }
 
-
-
 .container {
-  margin: 50px auto auto auto;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
-  grid-template-columns: 200px 250px 250px;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 180px 1fr 1fr 100px;
   gap: 10px;
   max-width: 600px;
@@ -372,7 +376,6 @@
   place-items: center;
   background-color: #111;
   max-width: 420px;
-  min-width: 350px;
   /* border: 5px solid;
   border-image: conic-gradient(#f5f551,#5eff5e,#84a1ff,#ff45ff,#ff5a5a,#ffbc41,#f5f551) 1; */
 
