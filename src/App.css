@@ -182,7 +182,7 @@
   grid-column: 1/2;
   margin-right: auto;
   margin-left: auto;
-  width: 8rem;
+  width: 7rem;
   height: 5rem;
   border-radius: 50px;
   background-color: red;
@@ -202,7 +202,7 @@
   grid-column: 2/3;
   margin-right: auto;
   margin-left: auto;
-  width: 8rem;
+  width: 7rem;
   height: 5rem;
   border-radius: 50px;
   background-color: green;
@@ -222,7 +222,7 @@
   grid-column: 3/4;
   margin-right: auto;
   margin-left: auto;
-  width: 8rem;
+  width: 7rem;
   height: 5rem;
   border-radius: 50px;
   background-color: blue;
